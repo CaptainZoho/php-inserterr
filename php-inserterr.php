@@ -34,7 +34,7 @@ foreach ($_POST as $key => $value) {
 		continue;
 	}
 
-	$_key = substr($db->real_escape_string($key), strlen($key_prefix)) . $column_prefix;
+	$_key = $column_prefix . substr($db->real_escape_string($key), strlen($key_prefix));
 	$_value = $db->real_escape_string($value);
 
 	//echo $_key.":<br><br>".$_value."<hr>";
