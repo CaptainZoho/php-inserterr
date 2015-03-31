@@ -1,9 +1,49 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>php-inserterr - Demo Page</title>
+		<title>php-inserterr Documentation</title>
 	</head>
 	<body>
-		<h1>php-inserterr<small>Demo Page</small></h1>
+		<h1>php-inserterr Documentation</h1>
+		<h2>What is php-inserterr?</h2>
+			<p><strong>
+				php-inserterr is a flexible php script for inserting HTML Form data into SQL Tables
+			</strong></p>
+			<p>
+				php-inserterr will automatically detect the HTML form fields that are POSTed to it and will insert the data into a given SQL Table according to the form field names. If you add a new form field to your form (and a column to your SQL table), php-inserterr will automatically insert the form field's data into the related table column.
+			</p>
+		<h2>Usage</h2>
+			<h3>Setting up your HTMl form</h3>
+				<p>
+					When setting up your form, remember to <strong><u>name your form fields according to the column names in your SQL table!</u></strong> Otherwise php-inserterr won't be able to detect which SQL column the form field belongs to and will throw an error.
+				</p>
+			<h3>Options</h3>
+				<p>php-inserterr provides provides a bunch of options you can define like this:</p>
+				<pre>input type="hidden" name="php-inserterr-[option]" value="[value]"></pre>
+				<h4>Optional</h4>
+					<table>
+						<thead>
+							<th>Option</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>table</td>
+								<td>Name of the SQL table php-inserterr will use.</td>
+							</tr>
+							<tr>
+								<td>redirect</td>
+								<td>URL the user will be redirected to after the insertion.</td>
+							</tr>
+							<tr>
+								<td>key-prefix</td>
+								<td>Prefix in your form-field names. Will be removed before being used as the SQL Table column names</td>
+							</tr>
+							<tr>
+								<td>column-prefix</td>
+								<td>Prefix in your SQL table column names. Will be appended to your form-field names.</td>
+							</tr>
+						</tbody>
+					</table>
 	</body>
 </html>
